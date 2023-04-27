@@ -1,0 +1,31 @@
+1. Create a database using mongosh (Mongo shell) & perform the following
+operations : (Database can be of students, movies, employees, products etc).
+a. Inserting at least 5 records with at least one data type of string, number,
+boolean values.
+b. Deleting a record with a given condition
+c. Displaying only some particular fields.
+d. Update values as per a condition
+e. Limit the number of documents displayed
+f. Display all the documents.
+
+-> 'use myDatabase'
+
+a. db.students.insertMany([
+  { name: "scooby", age: 20, isMale: true },
+  { name: "bulma", age: 18, isMale: false },
+  { name: "harry", age: 22, isMale: true },
+  { name: "alice", age: 19, isMale: false },
+  { name: "Peter", age: 21, isMale: true }
+]);
+
+b. db.students.deleteOne({ name: "scooby" });
+
+c. db.students.find({}, { name: 1, age: 1 });
+
+d. db.students.updateOne({ name: "bulma" }, { $set: { age: 20 } });
+
+e. db.students.find().limit(2);
+
+f. db.students.find();
+
+
